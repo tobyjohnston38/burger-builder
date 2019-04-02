@@ -1,14 +1,14 @@
-import React from "react";
+import React from "react"
 
-import classes from "./BuildControls.css";
-import BuildControl from "./BuildControl/BuildControl";
+import classes from "./BuildControls.css"
+import BuildControl from "./BuildControl/BuildControl"
 
 const controls = [
   { label: "Salad", type: "salad" },
   { label: "Bacon", type: "bacon" },
   { label: "Cheese", type: "cheese" },
   { label: "Meat", type: "meat" }
-];
+]
 
 const buildControls = props => (
   <div className={classes.buildControls}>
@@ -24,10 +24,13 @@ const buildControls = props => (
         disabled={props.disabled[ctrl.type]}
       />
     ))}
-    <button className={classes.OrderButton} disabled={!props.purchaseable}>
+    <button
+      className={classes.OrderButton}
+      disabled={!props.purchaseable}
+      onClick={props.ordered}>
       Order Now
     </button>
   </div>
-);
+)
 
-export default buildControls;
+export default buildControls
